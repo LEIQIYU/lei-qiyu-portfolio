@@ -97,9 +97,10 @@ button {
   max-height: calc(100vh - 60px);
 }
 .cover-frame .window-chrome {
-  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
   height: 60px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
 }
 .cover-titlebar {
   position: absolute;
@@ -114,20 +115,18 @@ button {
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
   padding: 8px 22px;
   border-radius: 999px;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.02) 100%
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.01) 100%
   );
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.10);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 4px 18px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 2px 10px rgba(0, 0, 0, 0.08);
   user-select: none;
   pointer-events: none;
   white-space: nowrap;
@@ -137,24 +136,24 @@ button {
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.18em;
-  color: #f3f3f3;
-  background: linear-gradient(180deg, #ffffff 0%, #b8b8b8 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #4a4a4a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #0a0a0a;
 }
 .cover-titlebar .cover-title-sep {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.35);
   transform: translateY(-2px);
 }
 .cover-titlebar .cover-title-sub {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.42em;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
 }
 .cover-stage {
@@ -177,32 +176,35 @@ button {
   object-fit: cover; /* fill the 16:9 stage, no letterbox */
   z-index: 0;
   pointer-events: none;
-  /* Pixel-bounce intro animation */
-  animation: coverPixelBounce 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* Pixel-gathering intro: start as a tiny saturated pixel blob,
+     then resolve into the clear image */
+  animation: coverPixelGather 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 200ms;
   transform-origin: center;
 }
-@keyframes coverPixelBounce {
+@keyframes coverPixelGather {
   0% {
-    transform: scale(0.6) translateY(60px);
-    filter: blur(24px) contrast(20) saturate(0.4);
+    transform: scale(0.28);
+    filter: blur(28px) contrast(60) saturate(0.2) hue-rotate(0deg);
     opacity: 0;
   }
+  15% {
+    opacity: 1;
+  }
   35% {
-    transform: scale(1.08) translateY(-8px);
-    filter: blur(0) contrast(1) saturate(1);
-    opacity: 1;
+    transform: scale(0.62);
+    filter: blur(18px) contrast(40) saturate(0.4);
   }
-  55% {
-    transform: scale(0.97) translateY(3px);
-    filter: blur(0) contrast(1) saturate(1);
-    opacity: 1;
+  60% {
+    transform: scale(0.9);
+    filter: blur(8px) contrast(15) saturate(0.8);
   }
-  75% {
-    transform: scale(1.02) translateY(-1px);
+  85% {
+    transform: scale(1.02);
+    filter: blur(2px) contrast(4) saturate(0.95);
   }
   100% {
-    transform: scale(1) translateY(0);
+    transform: scale(1);
     filter: blur(0) contrast(1) saturate(1);
     opacity: 1;
   }
