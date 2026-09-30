@@ -83,6 +83,9 @@ button {
 .cover-page {
   /* inherits .page layout (100vh, padding, centered flex) */
   align-items: center; /* vertically center the cover */
+  padding: 12px;
+  min-height: 100vh;
+  min-height: 100dvh; /* dynamic viewport for mobile (excludes URL bar) */
 }
 .cover-frame {
   /* inherits .window-frame (max-width, border-radius, bg) */
@@ -91,15 +94,18 @@ button {
   box-shadow: none; /* no frame border per request */
   overflow: hidden;
   min-height: 0; /* override .window-frame min-height — let content drive */
-  height: fit-content;
-  width: fit-content;
-  max-width: var(--frame-max-w);
-  max-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  /* Viewport-aware sizing: fit 16:9 within available area, capped by max-width */
+  width: min(100%, var(--frame-max-w), calc(100dvh * 16 / 9));
+  max-height: calc(100dvh - 24px);
+  aspect-ratio: 16 / 9; /* hard guarantee: stage is 16:9 */
 }
 .cover-frame .window-chrome {
   background: #ffffff;
   border-bottom: 0;
   height: 60px;
+  flex-shrink: 0;
   box-shadow: none;
 }
 .cover-titlebar {
@@ -156,11 +162,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* 16:9 aspect ratio matching 作品集开头.mp4 (1920x1080) */
-  width: min(100%, calc((100vh - 120px) * 16 / 9));
-  aspect-ratio: 16 / 9;
-  max-height: calc(100vh - 120px);
-  max-width: var(--frame-max-w);
+  /* Fill remaining space below the chrome in the 16:9 cover-frame */
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
 }
 .cover-video {
   width: 100%;
@@ -1114,6 +1119,16 @@ button {
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
   .folders-mini { flex-wrap: wrap; gap: 24px; }
+  .cover-page { padding: 8px; }
+  .cover-frame .window-chrome { height: 44px; }
+  .cover-titlebar { font-size: 12px; gap: 8px; letter-spacing: 0.22em; }
+  .cover-titlebar .cover-title-mark { font-size: 13px; }
+  .cover-titlebar .cover-title-sub { font-size: 10px; letter-spacing: 0.32em; }
+  .cover-frame .window-next { font-size: 12px; }
+  .cover-frame .window-dots { left: 14px; gap: 6px; }
+  .cover-frame .dot { width: 11px; height: 11px; }
+  /* keep folder labels hidden on very small cover to avoid overlap */
+  .folder .folder-name { display: none; }
 }
 
 @media (max-width: 560px) {
