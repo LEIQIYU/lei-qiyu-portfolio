@@ -82,7 +82,7 @@ button {
 /* ===== Cover page — same window-frame size/effect as other pages ===== */
 .cover-page {
   /* inherits .page layout (100vh, padding, centered flex) */
-  align-items: center; /* vertically center the 16:9 cover */
+  align-items: center; /* vertically center the cover */
 }
 .cover-frame {
   /* inherits .window-frame (max-width, border-radius, bg) */
@@ -104,10 +104,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Force 16:9 aspect ratio matching 作品集片头.mp4 (1920x1080) */
-  width: min(100%, calc((100vh - 60px) * 16 / 9));
+  /* 16:9 aspect ratio matching 作品集开头.mp4 (1920x1080) */
+  width: min(100%, calc((100vh - 140px) * 16 / 9));
   aspect-ratio: 16 / 9;
-  max-height: calc(100vh - 60px);
+  max-height: calc(100vh - 140px);
   max-width: var(--frame-max-w);
 }
 .cover-video {
