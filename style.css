@@ -83,7 +83,6 @@ button {
 .cover-page {
   /* inherits .page layout (100vh, padding, centered flex) */
   align-items: center; /* vertically center the 16:9 cover */
-  background-color: #000; /* match cover video so no white shows around 16:9 frame */
 }
 .cover-frame {
   /* inherits .window-frame (max-width, border-radius, bg) */
