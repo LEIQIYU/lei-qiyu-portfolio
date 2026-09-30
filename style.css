@@ -118,10 +118,9 @@ button {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* show entire video, no crop */
+  object-fit: cover; /* fill frame, no letterbox */
   z-index: 0;
   pointer-events: none;
-  background: #000;
 }
 
 .folders {
@@ -135,7 +134,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   transform-origin: center;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.35s ease;
@@ -147,15 +146,15 @@ button {
 
 .folder:hover,
 .folder:focus-visible {
-  transform: scale(1.18);
+  transform: scale(1.15);
   filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.45));
   outline: none;
 }
 
 .folder-icon {
   display: block;
-  width: 78px;
-  height: 64px;
+  width: 66px;
+  height: 54px;
   position: relative;
   border-radius: 4px 4px 6px 6px;
   background: rgba(255, 255, 255, 0.95);
@@ -164,10 +163,10 @@ button {
 .folder-icon::before {
   content: "";
   position: absolute;
-  top: -8px;
+  top: -7px;
   left: 0;
   width: 50%;
-  height: 12px;
+  height: 10px;
   border-radius: 4px 4px 0 0;
   background: inherit;
   filter: brightness(0.95);
@@ -181,11 +180,11 @@ button {
 .folder-name {
   display: block;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   color: #fff;
   letter-spacing: 0.08em;
-  padding: 5px 10px;
+  padding: 4px 9px;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(4px);
@@ -220,8 +219,8 @@ button {
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 .folder-mini .folder-icon {
-  width: 56px;
-  height: 46px;
+  width: 48px;
+  height: 39px;
 }
 .folder-mini .folder-name {
   display: none;
