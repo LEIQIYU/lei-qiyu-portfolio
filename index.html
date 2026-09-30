@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEI QIYU · Portfolio</title>
+  <meta name="description" content="LEI QIYU — Content creator · Editor · Photographer based in Seoul, Korea." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============= 1. COVER ============= -->
+  <section id="cover" class="page cover-page" aria-label="Cover">
+    <div class="window-frame cover-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="window-title-chip" aria-hidden="true">COVER</span>
+        <a href="#about" class="window-next" aria-label="Next: About me">Next ›</a>
+      </div>
+
+      <div class="cover-stage">
+        <video class="cover-video" autoplay muted loop playsinline preload="auto">
+          <source src="assets/cover.mp4" type="video/mp4" />
+        </video>
+
+        <!-- 4 folders positioned to match the MOV layout (red about me, green project, blue photo, orange channel) -->
+        <nav class="folders" aria-label="Sections">
+          <a href="#about" class="folder folder-about" data-target="about" aria-label="About me">
+            <span class="folder-icon folder-icon-red"></span>
+            <span class="folder-name">about me</span>
+          </a>
+          <a href="#channel" class="folder folder-channel" data-target="channel" aria-label="My channel">
+            <span class="folder-icon folder-icon-orange"></span>
+            <span class="folder-name">channel</span>
+          </a>
+          <a href="#photo" class="folder folder-photo" data-target="photo" aria-label="Photo by me">
+            <span class="folder-icon folder-icon-blue"></span>
+            <span class="folder-name">photo</span>
+          </a>
+          <a href="#project" class="folder folder-project" data-target="project" aria-label="My project">
+            <span class="folder-icon folder-icon-green"></span>
+            <span class="folder-name">project</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 2. ABOUT ME ============= -->
+  <section id="about" class="page" aria-label="About me">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#cover" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#channel" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content about-content">
+        <!-- (page eyebrow removed per request) -->
+        <h1 class="page-title">ABOUT ME</h1>
+
+        <div class="lang-toggle" role="tablist" aria-label="Language toggle">
+          <button type="button" class="lang-btn is-active" data-lang="en" role="tab" aria-selected="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="ko" role="tab" aria-selected="false" aria-label="한국어">한국어</button>
+        </div>
+
+        <div class="about-grid">
+          <figure class="about-photo">
+            <img src="assets/about-me-1.jpg" alt="LEI QIYU portrait" />
+          </figure>
+
+          <div class="about-text">
+            <p class="about-bio about-bio-en">
+              Hey! My name is <strong>LEI QIYU</strong>. I am a passionate content
+              creator and multimedia designer currently based in Seoul, South
+              Korea. I specialize in video production, editing, and cross-platform
+              content strategy, with a strong foundation in design tools including
+              After Effects, Photoshop, Premiere Pro. My multilingual proficiency
+              (Chinese, Korean, English) allows me to bridge cultures and engage
+              diverse audiences effectively.
+            </p>
+            <p class="about-bio about-bio-ko" lang="ko" hidden>
+              안녕하세요! 저는 현재 서울에서 활동하고 있는 콘텐츠 크리에이터 겸 멀티미디어 디자이너 LEI QIYU입니다. 저는 영상 제작, 편집 및 크로스 플랫폼 콘텐츠 전략 수립을 전문으로 하고 있으며,  다양한 디자인 툴을 능숙하게 다룹니다. 중국어, 한국어, 영어에 능통한 언어 역량을 바탕으로 문화적 간극을 연결하고 다양한 글로벌 시청자들과 효과적으로 소통하는 데 강점이 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 3. MY CHANNEL ============= -->
+  <section id="channel" class="page" aria-label="My channel">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#about" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#project" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content channel-content">
+        <span class="window-tag">EXAMPLE</span>
+
+        <div class="channel-bio-link">
+          <span class="channel-bio-label">more about me</span>
+          <a href="https://lnk.bio/lkiyoo0" target="_blank" rel="noopener" class="channel-bio-pill">
+            <span class="channel-bio-host">lnk.bio</span>
+            <span class="channel-bio-sep" aria-hidden="true">/</span>
+            <span class="channel-bio-handle">lkiyoo0</span>
+            <span class="channel-bio-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Row 1: 3 YouTube (landscape 16:9) -->
+        <div class="channel-row channel-row-yt">
+          <a class="channel-card-yt" href="https://youtu.be/Qlp0CXD1NWE" target="_blank" rel="noopener">
+            <img src="assets/yt-1.jpg" alt="Living alone in Seoul" />
+            <span class="channel-play" aria-hidden="true"></span>
+          </a>
+          <a class="channel-card-yt" href="https://youtu.be/F6EyYGLiOUA" target="_blank" rel="noopener">
+            <img src="assets/yt-2.jpg" alt="Living Alone Diary" />
+            <span class="channel-play" aria-hidden="true"></span>
+          </a>
+          <a class="channel-card-yt" href="https://youtu.be/eMHE3sdVcBU" target="_blank" rel="noopener">
+            <img src="assets/yt-3.jpg" alt="KoR VLOG" />
+            <span class="channel-play" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- Row 2: 5 Douyin (portrait 9:16 + URL text below) -->
+        <div class="channel-row channel-row-dy">
+          <a class="channel-card-dy" href="https://v.douyin.com/_SDBhTviz54/" target="_blank" rel="noopener">
+            <img class="channel-dy-cover" src="assets/dy-5.jpg" alt="圣水篇" />
+            <span class="channel-dy-url">https://v.douyin.com/_SDBhTviz54/</span>
+          </a>
+          <a class="channel-card-dy" href="https://v.douyin.com/PW96ikQTf8w/" target="_blank" rel="noopener">
+            <img class="channel-dy-cover" src="assets/dy-4.jpg" alt="龙山篇" />
+            <span class="channel-dy-url">https://v.douyin.com/PW96ikQTf8w/</span>
+          </a>
+          <a class="channel-card-dy" href="https://v.douyin.com/ro7XU88f5TA/" target="_blank" rel="noopener">
+            <img class="channel-dy-cover" src="assets/dy-1.jpg" alt="GD歌词" />
+            <span class="channel-dy-url">https://v.douyin.com/ro7XU88f5TA/</span>
+          </a>
+          <a class="channel-card-dy" href="https://v.douyin.com/XJDy-A0UsxE/" target="_blank" rel="noopener">
+            <img class="channel-dy-cover" src="assets/dy-3.jpg" alt="雅思7.0" />
+            <span class="channel-dy-url">https://v.douyin.com/XJDy-A0UsxE/</span>
+          </a>
+          <a class="channel-card-dy" href="https://v.douyin.com/ur1stvSlGu4/" target="_blank" rel="noopener">
+            <img class="channel-dy-cover" src="assets/dy-2.jpg" alt="Diet Tips" />
+            <span class="channel-dy-url">https://v.douyin.com/ur1stvSlGu4/</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 4. PROJECT 01 — <嗨皮海恩> ============= -->
+  <section id="project" class="page" aria-label="My project — 嗨皮海恩">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#channel" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#project2" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content project-content">
+        <!-- (page eyebrow removed per request) -->
+        <h1 class="page-title">MY PROJECT</h1>
+
+        <article class="project-pptx">
+          <h2 class="project-title-ko">&lt;嗨皮海恩&gt;</h2>
+          <p class="project-meta-ko">
+            <span class="meta-key">담당</span>
+            <span class="meta-val">편집</span>
+          </p>
+
+          <div class="bili-grid">
+            <a class="bili-card" href="https://www.bilibili.com/video/BV1qDE36kEjh" target="_blank" rel="noopener">
+              <img src="https://i1.hdslb.com/bfs/archive/f9c79a590e90fcbb52982af9dd75a86a80662391.jpg" alt="嗨皮海恩 1" />
+            </a>
+            <a class="bili-card" href="https://www.bilibili.com/video/BV1aDTc6kEJv" target="_blank" rel="noopener">
+              <img src="https://i0.hdslb.com/bfs/archive/8fd3eafa01c2e1594d69e365b6b7aa36dc46f175.jpg" alt="嗨皮海恩 2" />
+            </a>
+            <a class="bili-card" href="https://www.bilibili.com/video/BV19A8n6dE97" target="_blank" rel="noopener">
+              <img src="https://i1.hdslb.com/bfs/archive/22fdf213bfa0d331b9fbe3dcc579d6a92c4f705b.jpg" alt="嗨皮海恩 3" />
+            </a>
+            <a class="bili-card" href="https://www.bilibili.com/video/BV1cLYg6UEag" target="_blank" rel="noopener">
+              <img src="https://i0.hdslb.com/bfs/archive/bb819c2f041cf5e0d9623f33e41cf3fb0cb36b64.jpg" alt="嗨皮海恩 4" />
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 5. PROJECT 02 — <불청객> ============= -->
+  <section id="project2" class="page" aria-label="My project — 불청객">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#project" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#project3" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content project-content">
+        <!-- (page eyebrow removed per request) -->
+        <h1 class="page-title">MY PROJECT</h1>
+
+        <article class="project-pptx project-01">
+          <h2 class="project-title-ko">&lt;불청객&gt;</h2>
+
+          <div class="project-01-layout">
+            <div class="project-side">
+              <p class="project-meta-ko">
+                <span class="meta-key">장르</span>
+                <span class="meta-val">단편영화</span>
+              </p>
+              <p class="project-meta-ko">
+                <span class="meta-key">담당</span>
+                <span class="meta-val">촬영 | 편집</span>
+              </p>
+              <p class="project-award">
+                *제14회 충무로 단편, 독립영화제-심사위원 특별상
+              </p>
+              <figure class="project-crew">
+                <img src="assets/proj01-crew.jpg" alt="불청객 crew list" />
+              </figure>
+            </div>
+
+            <figure class="project-poster">
+              <img src="assets/proj01-poster.jpg" alt="불청객 poster" />
+            </figure>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 6. PROJECT 03 — <북작북작> ============= -->
+  <section id="project3" class="page" aria-label="My project — 북작북작">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#project2" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#photo" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content project-content">
+        <!-- (page eyebrow removed per request) -->
+        <h1 class="page-title">MY PROJECT</h1>
+
+        <article class="project-pptx project-02">
+          <h2 class="project-title-ko">&lt;북작북작&gt;</h2>
+          <p class="project-meta-ko">
+            <span class="meta-key">장르</span>
+            <span class="meta-val">예능</span>
+          </p>
+          <p class="project-meta-ko">
+            <span class="meta-key">담당</span>
+            <span class="meta-val">촬영 | 편집</span>
+          </p>
+
+          <div class="project-02-stills">
+            <figure class="project-fig">
+              <img src="assets/proj02-still-1.png" alt="북작북작 still 1" />
+            </figure>
+            <figure class="project-fig">
+              <img src="assets/proj02-still-2.png" alt="북작북작 still 2" />
+            </figure>
+          </div>
+
+          <div class="project-video">
+            <iframe
+              src="https://www.youtube.com/embed/3OoHEQV2Qv0"
+              title="북작북작"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 7. PHOTO BY ME ============= -->
+  <section id="photo" class="page" aria-label="Photo by me">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#project3" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#skill" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content photo-content">
+        <!-- (page eyebrow removed per request) -->
+        <h1 class="page-title photo-title">My Portrait Collection</h1>
+
+        <div class="photo-groups" id="photoGroups">
+          <button class="photo-group" data-group="retro" type="button">
+            <span class="photo-group-cover">
+              <img src="assets/photos/retro-1.jpg" alt="Retro Warm Tone" />
+            </span>
+            <span class="photo-group-name">Retro Warm Tone</span>
+          </button>
+          <button class="photo-group" data-group="silk" type="button">
+            <span class="photo-group-cover">
+              <img src="assets/photos/silk-1.jpg" alt="Silk & Classic" />
+            </span>
+            <span class="photo-group-name">Silk &amp; Classic</span>
+          </button>
+          <button class="photo-group" data-group="midnight" type="button">
+            <span class="photo-group-cover">
+              <img src="assets/photos/midnight-1.jpg" alt="Midnight Romance" />
+            </span>
+            <span class="photo-group-name">Midnight Romance</span>
+          </button>
+          <button class="photo-group" data-group="friends" type="button">
+            <span class="photo-group-cover">
+              <img src="assets/photos/friends-1.jpg" alt="Friends" />
+            </span>
+            <span class="photo-group-name">Friends</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 8. MY SKILL ============= -->
+  <section id="skill" class="page" aria-label="My skill">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#photo" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#contact" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content skill-content">
+        <!-- (page eyebrow removed per request) -->
+
+        <h1 class="page-title skill-title">MY SKILL</h1>
+
+        <!-- Main skill table (per skill.pdf: 3 columns) -->
+        <div class="skill-table-wrap">
+          <table class="skill-table">
+            <thead>
+              <tr>
+                <th class="skill-th">구분</th>
+                <th class="skill-th">활용능력(상/중/하)</th>
+                <th class="skill-th">프로그램명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="skill-td skill-td-key">영상</td>
+                <td class="skill-td skill-td-rank">상</td>
+                <td class="skill-td skill-td-prog skill-red">프리미어, Final Cut, CapCut, 애프터 이펙트</td>
+              </tr>
+              <tr>
+                <td class="skill-td skill-td-key">그래픽</td>
+                <td class="skill-td skill-td-rank">중</td>
+                <td class="skill-td skill-td-prog skill-red">포토샵, 일러스트</td>
+              </tr>
+              <tr>
+                <td class="skill-td skill-td-key">촬영</td>
+                <td class="skill-td skill-td-rank">중</td>
+                <td class="skill-td skill-td-prog skill-red">Mirrorless ILC (Sony a7C II), Digital Camera (Canon G7X II)</td>
+              </tr>
+              <tr>
+                <td class="skill-td skill-td-key">음향</td>
+                <td class="skill-td skill-td-rank">중</td>
+                <td class="skill-td skill-td-prog skill-red">프로툴스, Logic Pro</td>
+              </tr>
+              <tr>
+                <td class="skill-td skill-td-key">컴퓨터</td>
+                <td class="skill-td skill-td-rank">상</td>
+                <td class="skill-td skill-td-prog skill-red">워드,엑셀, PPT,한글, Canva, Notion</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Language row (per skill.pdf) -->
+        <div class="skill-lang-wrap">
+          <table class="skill-lang">
+            <tbody>
+              <tr>
+                <td class="lang-cell lang-key">어학</td>
+                <td class="lang-cell">한국어(TOPIK)</td>
+                <td class="lang-cell">6급</td>
+                <td class="lang-cell">영어(IELTS)</td>
+                <td class="lang-cell">7</td>
+                <td class="lang-cell">중국어</td>
+                <td class="lang-cell">모국어</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 9. CONTACT ME ============= -->
+  <section id="contact" class="page contact-page" aria-label="Contact me">
+    <div class="window-frame">
+      <div class="window-chrome">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <a href="#skill" class="window-back" aria-label="Back">‹</a>
+        <button class="window-menu" aria-label="Menu">≡</button>
+        <a href="#cover" class="window-next">Next ›</a>
+      </div>
+
+      <div class="window-content contact-content">
+        <!-- (page eyebrow removed per request) -->
+        <h1 class="page-title">CONTACT ME</h1>
+
+        <p class="contact-thanks">
+          Thank you for taking the time to explore my work.
+        </p>
+
+        <ul class="contact-list">
+          <li><span class="contact-key">Email</span><a href="mailto:lkiyoo04567@gmail.com">lkiyoo04567@gmail.com</a></li>
+          <li><span class="contact-key">Phone</span><a href="tel:+8201046830901">+82 01046830901</a></li>
+        </ul>
+
+        <!-- 4 folder icons (matching PPTX slide 12) -->
+        <nav class="folders folders-mini" aria-label="Sections">
+          <a href="#about" class="folder folder-mini folder-about" data-target="about" aria-label="About me">
+            <span class="folder-icon folder-icon-red"></span>
+            <span class="folder-name">about me</span>
+          </a>
+          <a href="#project" class="folder folder-mini folder-project" data-target="project" aria-label="My project">
+            <span class="folder-icon folder-icon-green"></span>
+            <span class="folder-name">project</span>
+          </a>
+          <a href="#photo" class="folder folder-mini folder-photo" data-target="photo" aria-label="Photo by me">
+            <span class="folder-icon folder-icon-blue"></span>
+            <span class="folder-name">photo</span>
+          </a>
+          <a href="#channel" class="folder folder-mini folder-channel" data-target="channel" aria-label="My channel">
+            <span class="folder-icon folder-icon-orange"></span>
+            <span class="folder-name">channel</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= LIGHTBOX ============= -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous">‹</button>
+    <button class="lightbox-next" aria-label="Next">›</button>
+    <figure class="lightbox-stage">
+      <img class="lightbox-img" alt="" />
+      <figcaption class="lightbox-cap"></figcaption>
+    </figure>
+  </div>
+
+  <!-- Global particle canvas (covers ALL pages, sits above content) -->
+  <canvas class="global-particles" id="globalParticles" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
