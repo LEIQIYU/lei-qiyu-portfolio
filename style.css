@@ -84,9 +84,10 @@ button {
   /* inherits .page layout (100vh, padding, centered flex) */
 }
 .cover-frame {
-  /* inherits .window-frame (max-width, border-radius, shadow, bg) */
+  /* inherits .window-frame (max-width, border-radius, bg) */
   background-color: #111;
   background-image: none; /* override the .window-frame paper background */
+  box-shadow: none; /* remove frame border per request */
   overflow: hidden;
 }
 .window-title-chip {
@@ -112,15 +113,18 @@ button {
   overflow: hidden;
   background: #000;
   cursor: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cover-video {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill frame, no letterbox */
+  aspect-ratio: 16 / 9; /* match source 作品集片头.MOV (1920x1080) */
+  object-fit: contain; /* show entire video, no crop */
   z-index: 0;
   pointer-events: none;
+  background: #000;
 }
 
 .folders {
