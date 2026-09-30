@@ -97,10 +97,10 @@ button {
   max-height: calc(100vh - 60px);
 }
 .cover-frame .window-chrome {
-  background: linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  background: #ffffff;
+  border-bottom: 0;
   height: 60px;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
 }
 .cover-titlebar {
   position: absolute;
@@ -116,17 +116,11 @@ button {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: #1a1a1a;
-  padding: 8px 22px;
-  border-radius: 999px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.04) 0%,
-    rgba(0, 0, 0, 0.01) 100%
-  );
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
   user-select: none;
   pointer-events: none;
   white-space: nowrap;
@@ -136,11 +130,9 @@ button {
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.18em;
-  background: linear-gradient(180deg, #0a0a0a 0%, #4a4a4a 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: #0a0a0a;
+  background: none;
+  -webkit-text-fill-color: currentColor;
 }
 .cover-titlebar .cover-title-sep {
   width: 4px;
@@ -176,43 +168,6 @@ button {
   object-fit: cover; /* fill the 16:9 stage, no letterbox */
   z-index: 0;
   pointer-events: none;
-  /* Pixel-gathering intro: start as a tiny saturated pixel blob,
-     then resolve into the clear image */
-  animation: coverPixelGather 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 200ms;
-  transform-origin: center;
-}
-@keyframes coverPixelGather {
-  0% {
-    transform: scale(0.28);
-    filter: blur(28px) contrast(60) saturate(0.2) hue-rotate(0deg);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  35% {
-    transform: scale(0.62);
-    filter: blur(18px) contrast(40) saturate(0.4);
-  }
-  60% {
-    transform: scale(0.9);
-    filter: blur(8px) contrast(15) saturate(0.8);
-  }
-  85% {
-    transform: scale(1.02);
-    filter: blur(2px) contrast(4) saturate(0.95);
-  }
-  100% {
-    transform: scale(1);
-    filter: blur(0) contrast(1) saturate(1);
-    opacity: 1;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cover-video {
-    animation: none;
-  }
 }
 
 .folders {
@@ -288,7 +243,7 @@ button {
 
 .folder-about {
   top: 72%;
-  right: 25%;
+  right: 15%;
 }
 .folder-project {
   top: 15%;
