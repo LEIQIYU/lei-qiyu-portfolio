@@ -86,7 +86,7 @@ button {
 }
 .cover-frame {
   /* inherits .window-frame (max-width, border-radius, bg) */
-  background-color: #111;
+  background-color: #0a0a0a;
   background-image: none; /* override the .window-frame paper background */
   box-shadow: none; /* no frame border per request */
   overflow: hidden;
@@ -95,6 +95,67 @@ button {
   width: fit-content;
   max-width: var(--frame-max-w);
   max-height: calc(100vh - 60px);
+}
+.cover-frame .window-chrome {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  height: 60px;
+}
+.cover-titlebar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 4px 18px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.cover-titlebar .cover-title-mark {
+  font-family: var(--font-ko-serif);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  color: #f3f3f3;
+  background: linear-gradient(180deg, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cover-titlebar .cover-title-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+.cover-titlebar .cover-title-sub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
 }
 .cover-stage {
   position: relative;
@@ -105,9 +166,9 @@ button {
   align-items: center;
   justify-content: center;
   /* 16:9 aspect ratio matching 作品集开头.mp4 (1920x1080) */
-  width: min(100%, calc((100vh - 140px) * 16 / 9));
+  width: min(100%, calc((100vh - 120px) * 16 / 9));
   aspect-ratio: 16 / 9;
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 120px);
   max-width: var(--frame-max-w);
 }
 .cover-video {
@@ -116,6 +177,40 @@ button {
   object-fit: cover; /* fill the 16:9 stage, no letterbox */
   z-index: 0;
   pointer-events: none;
+  /* Pixel-bounce intro animation */
+  animation: coverPixelBounce 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 200ms;
+  transform-origin: center;
+}
+@keyframes coverPixelBounce {
+  0% {
+    transform: scale(0.6) translateY(60px);
+    filter: blur(24px) contrast(20) saturate(0.4);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1.08) translateY(-8px);
+    filter: blur(0) contrast(1) saturate(1);
+    opacity: 1;
+  }
+  55% {
+    transform: scale(0.97) translateY(3px);
+    filter: blur(0) contrast(1) saturate(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.02) translateY(-1px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    filter: blur(0) contrast(1) saturate(1);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover-video {
+    animation: none;
+  }
 }
 
 .folders {
@@ -191,7 +286,7 @@ button {
 
 .folder-about {
   top: 72%;
-  right: 5%;
+  right: 25%;
 }
 .folder-project {
   top: 15%;
