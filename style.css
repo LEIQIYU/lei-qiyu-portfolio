@@ -82,49 +82,40 @@ button {
 /* ===== Cover page — same window-frame size/effect as other pages ===== */
 .cover-page {
   /* inherits .page layout (100vh, padding, centered flex) */
+  align-items: center; /* vertically center the 16:9 cover */
 }
 .cover-frame {
   /* inherits .window-frame (max-width, border-radius, bg) */
   background-color: #111;
   background-image: none; /* override the .window-frame paper background */
-  box-shadow: none; /* remove frame border per request */
+  box-shadow: none; /* no frame border per request */
   overflow: hidden;
-}
-.window-title-chip {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, calc(-50% - 18px));
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  color: var(--ink-soft);
-  padding: 5px 14px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  pointer-events: none;
-  user-select: none;
+  min-height: 0; /* override .window-frame min-height — let content drive */
+  height: fit-content;
+  width: fit-content;
+  max-width: var(--frame-max-w);
+  max-height: calc(100vh - 60px);
 }
 .cover-stage {
   position: relative;
-  flex: 1;
   overflow: hidden;
   background: #000;
   cursor: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Force 16:9 aspect ratio matching 作品集片头.mp4 (1920x1080) */
+  width: min(100%, calc((100vh - 60px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 60px);
+  max-width: var(--frame-max-w);
 }
 .cover-video {
   width: 100%;
   height: 100%;
-  aspect-ratio: 16 / 9; /* match source 作品集片头.MOV (1920x1080) */
-  object-fit: contain; /* show entire video, no crop */
+  object-fit: cover; /* fill the 16:9 stage, no letterbox */
   z-index: 0;
   pointer-events: none;
-  background: #000;
 }
 
 .folders {
